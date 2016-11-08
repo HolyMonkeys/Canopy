@@ -19,7 +19,7 @@ ReactDOM.render(
 );
 
 
-// Hot Reloading.  Not working
+// Hot Reloading.  Not currently working
 // if (module.hot) {
 //   module.hot.accept('./hotMiddleWare', () => {
 //     const newHot = require('./hotMiddleWare').default;

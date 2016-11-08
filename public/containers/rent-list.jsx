@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import styles from '../stylesheets/main/rent-list.scss';
+
 import { connect } from 'react-redux';
 
 class RentList extends Component {
@@ -12,9 +14,11 @@ class RentList extends Component {
 
   render() {
     return (
-      <ul>
-        {this.props.rents.map(this.renderRents)}
-      </ul>
+      <div className='rentList'>
+        <ul>
+          {this.props.rents.map(this.renderRents)}
+        </ul>
+      </div>
     );
   }
 }

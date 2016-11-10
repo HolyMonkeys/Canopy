@@ -1,0 +1,40 @@
+
+.listingsPage {
+  position: relative;
+  width: 100vh;
+  height: 95vh;
+  margin: 0;
+  font-family: 'Amaranth', sans-serif;
+
+  .listings_map {
+    position: fixed;
+    display: inline-block;
+    margin:0;
+    width: 50%;
+    height: 100%;
+    right:0;
+  }
+
+  .listings_list {
+    position: fixed;
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    left:0;
+
+    .listing{
+      border: solid 1px;
+      text-align: center;
+
+      h3 {
+        margin: 0;
+      }
+
+      .listingDetails {
+        top: 0;
+        margin-left: 5%;
+        display: inline-block;
+      }
+    }
+  }
+}

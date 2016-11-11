@@ -8,33 +8,52 @@ const geoCoder = require('./geoCoder');
 // const Renter = require('./db/schema').Renter;
 // const RenterListing = require('./db/schema').RenterListing;
 
+const ForCCity = (city) => {
+  return geoCoder.geocode(city)
+  .then((res) => {
+    return City.findOrCreate({
+      where: {
+        name: city.slice(0, -4).toUpperCase(),
+        state: city.slice(-2).toUpperCase(),
+        lat: res[0].latitude,
+        lon: res[0].longitude
+      }
+    });
+  })
+  this.setState({images:[...this.state.images, file]})
+  .spread((cityElem) => {
+    console.log('cityElem: ', cityElem);
+    return cityElem;
+  })
+  .catch((err) => {
+    return `Error getting listings: ${err}`;
+  });
+};
+
 module.exports = {
   getListings: (city) => {
-    return geoCoder.geocode(city)
-    .then((res) => {
-      return City.findOrCreate({
+    ForCCity(city)
+    .then((cityElem) => {
+      return Listing.findOrCreate({
         where: {
-          name: city.slice(0, -4).toUpperCase(),
-          state: city.slice(-2).toUpperCase(),
-          lat: res[0].latitude,
-          lon: res[0].longitude
+          city_id:cityElem.id
         },
         include: [{
-          model: Listing,
-          include: [{
-            model: ListingImage,
-            include: [Image]
-          }]
+          model: ListingImage,
+          include: [Image]
         }]
       })
-      .spread((cityData) => {
-        console.log('cityData: ', cityData);
-        return cityData;
-      })
-      .catch((err) => {
-        return `Error getting listings: ${err}`;
-      });
+    })
+    .spread((listingData) => {
+      console.log('listingData: ', listingData);
+      return listingData;
+    })
+    .catch((err) => {
+      return `Error getting listings: ${err}`;
     });
+
+
+    }
   },
 
   postListing: (listingInfo) => {

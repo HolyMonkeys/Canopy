@@ -8,7 +8,7 @@ const geoCoder = require('./geoCoder');
 // const Renter = require('./db/schema').Renter;
 // const RenterListing = require('./db/schema').RenterListing;
 
-const ForCCity = (city) => {
+const forCCity = (city) => {
   return geoCoder.geocode(city)
   .then((res) => {
     return City.findOrCreate({
@@ -19,30 +19,22 @@ const ForCCity = (city) => {
         lon: res[0].longitude
       }
     });
-  })
-  this.setState({images:[...this.state.images, file]})
-  .spread((cityElem) => {
-    console.log('cityElem: ', cityElem);
-    return cityElem;
-  })
-  .catch((err) => {
-    return `Error getting listings: ${err}`;
-  });
+  });a
 };
 
 module.exports = {
   getListings: (city) => {
-    ForCCity(city)
-    .then((cityElem) => {
-      return Listing.findOrCreate({
+    return forCCity(city)
+    .spread((cityElem) => {
+      return Listing.findAll({
         where: {
-          city_id:cityElem.id
+          city_id: cityElem.id
         },
         include: [{
           model: ListingImage,
           include: [Image]
         }]
-      })
+      });
     })
     .spread((listingData) => {
       console.log('listingData: ', listingData);
@@ -51,14 +43,10 @@ module.exports = {
     .catch((err) => {
       return `Error getting listings: ${err}`;
     });
-
-
-    }
   },
 
   postListing: (listingInfo) => {
-    const listingForDb = listingInfo;
-    const city = `${listingForDb.city}, ${listingForDb.state}`;
+    const city = `${listingInfo.city}, ${listingInfo.state}`;
     geoCoder.geocode(city)
     .then((res) => {
       return City.findOrCreate({
@@ -67,14 +55,7 @@ module.exports = {
           state: city.slice(-2).toUpperCase(),
           lat: res[0].latitude,
           lon: res[0].longitude
-        },
-        include: [{
-          model: Listing,
-          include: [{
-            model: ListingImage,
-            include: [Image]
-          }]
-        }]
+        }
       })
       .spread((cityData) => {
         return cityData;
@@ -82,12 +63,12 @@ module.exports = {
       .catch((err) => {
         return `Error getting listings: ${err}`;
       }).then((response) => {
-        delete listingForDb.city;
-        delete listingForDb.state;
-        listingForDb.lat = response[0].latitude;
-        listingForDb.lon = response[0].longitude;
-        listingForDb.city_id = response[0].id;
-        Listing.create(listingForDb)
+        //make another geoCoder api req to get lat, long of listing
+        geoCoder.geocode( {address: listingInfo.street, city: 'San Francisco', state: 'CA'} );
+        listingInfo.lat = response[0].latitude;
+        listingInfo.lon = response[0].longitude;
+        listingInfo.city_id = response[0].id;
+        Listing.create(listingInfo)
         .then((listing) => {
           console.log('Created listing at ', listing.get('id'));
           return listing.get('id');

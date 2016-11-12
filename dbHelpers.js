@@ -19,7 +19,7 @@ const forCCity = (city) => {
         lon: res[0].longitude
       }
     });
-  });a
+  });
 };
 
 module.exports = {
@@ -36,7 +36,7 @@ module.exports = {
         }]
       });
     })
-    .spread((listingData) => {
+    .then((listingData) => {
       console.log('listingData: ', listingData);
       return listingData;
     })

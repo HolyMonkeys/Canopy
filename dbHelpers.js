@@ -8,6 +8,12 @@ const geoCoder = require('./geoCoder');
 // const Renter = require('./db/schema').Renter;
 // const RenterListing = require('./db/schema').RenterListing;
 
+cloudinary.config({
+  cloud_name: 'canopydev',
+  api_key: '526329837636264',
+  api_secret: 'yiKTPiLh21fqA9AiXMPpo45mkwU'
+});
+
 const forCCity = (city) => {
   return geoCoder.geocode(city)
   .then((cityLoc) => {
@@ -43,7 +49,7 @@ module.exports = {
   },
 
   postListing: (listingInfo) => {
-    return forCCity
+    return forCCity(`${listingInfo.city}, ${listingInfo.state}`)
     .spread((cityData) => {
       console.log('DB: city', cityData);
       return geoCoder.geocode({
@@ -58,12 +64,13 @@ module.exports = {
         listingInfo.city_id = cityData.get('id');
         return Listing.create(listingInfo);
       })
-      .spread((listing) => {
+      .then((listing) => {
         console.log('DB: listing', listing);
-        console.log('Created listing at ', listing.get('images'));
+        console.log('Created listing at ', listing.get('id'));
+        console.log('images: ', listingInfo.images);
         return Promise.all(
           listingInfo.images.map((image) => {
-            return cloudinary.uploader.upload(image.preview, (result) => {
+            return cloudinary.uploader.upload(image[0].preview, (result) => {
               console.log(result);
               return result.url;
             });

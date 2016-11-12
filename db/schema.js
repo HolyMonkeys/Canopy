@@ -51,8 +51,7 @@ const Listing = db.define('listing', {
   dogs: Sequelize.BOOLEAN,
   cats: Sequelize.BOOLEAN,
   term: Sequelize.INTEGER,
-  availableDate: Sequelize.DATEONLY,
-  images: Sequelize.TEXT
+  availableDate: Sequelize.DATEONLY
 });
 
 const Host = db.define('host', {
@@ -112,29 +111,21 @@ const Image = db.define('image', {
   ref: Sequelize.TEXT
 });
 
-const ListingImage = db.define('listingimage', {
-  id: {
-    type: Sequelize.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
-  }
-});
 
 // define model relationships
+Listing.belongsTo(Host, { foreignKey: 'host_id' });
 Host.hasMany(Listing, { foreignKey: 'host_id' });
+Listing.belongsTo(City, { foreignKey: 'city_id' });
 City.hasMany(Listing, { foreignKey: 'city_id' });
 
 Renter.hasMany(RenterListing);
-Listing.hasMany(RenterListing);
-
 RenterListing.belongsTo(Renter);
 RenterListing.belongsTo(Listing);
+Listing.hasMany(RenterListing);
 
-Listing.hasMany(ListingImage);
-Image.hasMany(ListingImage);
+Image.belongsTo(Listing, { foreignKey: 'listing_id' });
+Listing.hasMany(Image, { foreignKey: 'listing_id' });
 
-ListingImage.belongsTo(Listing);
-ListingImage.belongsTo(Image);
 
 // build tables
 db.sync({ force: false })
@@ -150,6 +141,5 @@ module.exports = {
   Host,
   Renter,
   RenterListing,
-  Image,
-  ListingImage
+  Image
 };

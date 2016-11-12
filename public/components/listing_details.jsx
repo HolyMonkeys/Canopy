@@ -8,7 +8,7 @@ const ListingDetail = (props) => {
       <ListingDesc activeListing={props.activeListing} listingData={props.listingData} />
       {//listingimages contain image property that has the image source stored in ref
       }
-      <ListingPics listingimages={props.activeListing.listingimages} />
+      <ListingPics images={props.activeListing.images} />
     </div>
   );
 };

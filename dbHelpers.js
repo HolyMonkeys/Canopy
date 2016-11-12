@@ -1,7 +1,7 @@
+const cloudinary = require('cloudinary');
 const Listing = require('./db/schema').Listing;
 const City = require('./db/schema').City;
 const Image = require('./db/schema').Image;
-const ListingImage = require('./db/schema').ListingImage;
 
 const geoCoder = require('./geoCoder');
 // const Host = require('./db/schema').Host;
@@ -10,13 +10,13 @@ const geoCoder = require('./geoCoder');
 
 const forCCity = (city) => {
   return geoCoder.geocode(city)
-  .then((res) => {
+  .then((cityLoc) => {
     return City.findOrCreate({
       where: {
         name: city.slice(0, -4).toUpperCase(),
         state: city.slice(-2).toUpperCase(),
-        lat: res[0].latitude,
-        lon: res[0].longitude
+        lat: cityLoc[0].latitude,
+        lon: cityLoc[0].longitude
       }
     });
   });
@@ -30,10 +30,7 @@ module.exports = {
         where: {
           city_id: cityElem.id
         },
-        include: [{
-          model: ListingImage,
-          include: [Image]
-        }]
+        include: [City, Image]
       });
     })
     .then((listingData) => {
@@ -46,36 +43,48 @@ module.exports = {
   },
 
   postListing: (listingInfo) => {
-    const city = `${listingInfo.city}, ${listingInfo.state}`;
-    geoCoder.geocode(city)
-    .then((res) => {
-      return City.findOrCreate({
-        where: {
-          name: city.slice(0, -4).toUpperCase(),
-          state: city.slice(-2).toUpperCase(),
-          lat: res[0].latitude,
-          lon: res[0].longitude
-        }
+    return forCCity
+    .spread((cityData) => {
+      console.log('DB: city', cityData);
+      return geoCoder.geocode({
+        address: listingInfo.street,
+        city: cityData.get('city'),
+        state: cityData.get('state')
       })
-      .spread((cityData) => {
-        return cityData;
+      .then((houseLoc) => {
+        console.log('GC: street', houseLoc);
+        listingInfo.lat = houseLoc[0].latitude;
+        listingInfo.lon = houseLoc[0].longitude;
+        listingInfo.city_id = cityData.get('id');
+        return Listing.create(listingInfo);
+      })
+      .spread((listing) => {
+        console.log('DB: listing', listing);
+        console.log('Created listing at ', listing.get('images'));
+        return Promise.all(
+          listingInfo.images.map((image) => {
+            return cloudinary.uploader.upload(image.preview, (result) => {
+              console.log(result);
+              return result.url;
+            });
+          })
+        )
+        .then((imgUrls) => {
+          return Promise.all(
+            imgUrls.map((imgUrl) => {
+              return Image.create({
+                ref: imgUrl,
+                listing_id: listing.id
+              });
+            })
+          );
+        });
+      })
+      .then(() => {
+        return 'Successfully posted listing to DB, and images to cloudinary';
       })
       .catch((err) => {
-        return `Error getting listings: ${err}`;
-      }).then((response) => {
-        //make another geoCoder api req to get lat, long of listing
-        geoCoder.geocode( {address: listingInfo.street, city: 'San Francisco', state: 'CA'} );
-        listingInfo.lat = response[0].latitude;
-        listingInfo.lon = response[0].longitude;
-        listingInfo.city_id = response[0].id;
-        Listing.create(listingInfo)
-        .then((listing) => {
-          console.log('Created listing at ', listing.get('id'));
-          return listing.get('id');
-        })
-        .catch((err) => {
-          console.log('Error creating listing: ', err);
-        });
+        console.log('Error creating listing: ', err);
       });
     });
   }

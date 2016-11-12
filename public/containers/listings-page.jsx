@@ -10,7 +10,6 @@ import selectListing from '../actions/select_listing';
 class ListingsPage extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       bedFilter: 0,
       bathFilter: 0,
@@ -38,7 +37,7 @@ class ListingsPage extends Component {
   }
 
   render() {
-    if (Array.isArray(this.props.listingData)) {
+    if (this.props.listingData.length === 0) {
       return (
         <div className="listingsPage">
           <div>Waiting for data...</div>
@@ -46,7 +45,7 @@ class ListingsPage extends Component {
       );
     }
 
-    const filtered = this.props.listingData.listings.filter((listing) => {
+    const filtered = this.props.listingData.filter((listing) => {
       return listing.beds >= this.state.bedFilter && listing.baths >= this.state.bathFilter;
     });
 
@@ -57,8 +56,8 @@ class ListingsPage extends Component {
           }
           <ListingsList
             listings={filtered}
-            city={this.props.listingData.name}
-            state={this.props.listingData.state}
+            city={this.props.listingData[0].city.name}
+            state={this.props.listingData[0].city.state}
             updateBedFilter={this.updateBedFilter}
             updateBathFilter={this.updateBathFilter}
             bedFilterHeader={this.state.bedFilterHeader}
@@ -69,8 +68,8 @@ class ListingsPage extends Component {
         <div className="listings_map">
           <GoogleMaps
             listings={filtered}
-            focalLat={this.props.listingData.lat}
-            focalLon={this.props.listingData.lon}
+            focalLat={this.props.listingData[0].city.lat}
+            focalLon={this.props.listingData[0].city.lon}
           />
         </div>
       </div>

@@ -24,9 +24,9 @@ module.exports = {
 
   postListing: (req, res) => {
     dbHelpers.postListing(req.body)
-    .then((listingId) => {
+    .then((success) => {
       console.log('Posted listing: ', listingId);
-      res.statusCode(200).send(listingId);
+      res.statusCode(200).send(success);
     })
     .catch((err) => {
       console.log('Failed to post listing: ', err);

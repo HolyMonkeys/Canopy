@@ -1,0 +1,39 @@
+.listing_page {
+  width: 100vh;
+  height: 95vh;
+  margin: 0;
+  font-family: 'Amaranth', sans-serif;
+
+}
+
+.listingMap {
+  margin:0;
+  width: 100vh;
+  height: 20vh;
+  right:0;
+}
+
+
+.listingInfo {
+  display: inline-block;
+  margin-left: 2vw;
+
+    .walkScore div{
+      display: inline-block;
+    }
+  
+  .details {
+    margin-right: 2vw;
+    display: inline-block;
+  }
+}
+
+.smallPics {
+  border-radius: 50%;
+  height: 20vh;
+}
+
+.curPic {
+  border-radius: 15%;
+  height: 35vh;
+}

@@ -1,0 +1,60 @@
+
+.listingsPage {
+  position: relative;
+  width: 100vh;
+  height: 95vh;
+  margin: 0;
+  font-family: 'Amaranth', sans-serif;
+
+  .listings_map {
+    position: fixed;
+    display: inline-block;
+    margin:0;
+    width: 50vw;
+    height: 100vh;
+    right:0;
+  }
+
+  .listings_list {
+
+   
+    position: fixed;
+    display: inline-block;
+    width: 50vw;
+    height: 100vh;
+    left:0;
+
+    .listing{
+      border: solid 1px;
+      text-align: left;
+      margin: 0;
+
+      .listingImg {
+        position: relative;
+        vertical-align: top;
+        height: 15vh;
+        display: inline-block;
+        width:20%;
+        border: solid 1px;
+      }
+
+      .listingListDetails {
+        margin-left: 4vh;
+        display: inline-block;
+        margin: 0;
+
+        h3 {
+          margin: 0;
+          margin-left: 4vh;
+        }
+
+        .listingDetails {
+
+          top: 0;
+          margin-left: 4vh;
+          display: inline-block;
+        }     
+      }
+    }
+  }
+}

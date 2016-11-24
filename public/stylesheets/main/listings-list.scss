@@ -1,0 +1,124 @@
+.modal-container {
+   position: relative;
+   width: 50vw;
+   display: inline-block;
+  }
+
+.modal-container .modal, .modal-container .modal-backdrop {
+  position: absolute;
+}
+
+.modal-body {
+  width:50vw;
+  text-align: center;
+  .listingDetails {
+    display: inline-block;
+  }
+}
+
+.modal-content .modal-footer {
+  width:50vw;
+}
+
+.listingsPage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0vh 1vh 1vh 1vh;
+  font-family: 'Work Sans', sans-serif;
+  .container{
+    width: 100%
+  }
+
+  #listingsList-container{
+    display:inline-block;
+    width:100%;
+    max-height: 50vh;
+  }
+
+  .city-search-listings{
+    text-align: center;
+    input{
+      width: 80vw;
+    }
+  }
+
+  .listings_map {
+    position: absolute;
+    display: inline-block;
+    width: 50%;
+    height: 85vh;
+    right:0px;
+  }
+
+  .listingOptions {
+    margin-bottom: 0;
+    max-width: 48vw;
+    #listings-filter{    
+      margin: 0;
+      padding: 0;
+      width: 50vw;
+      display: inline-block;
+    }
+    .navbar {
+      margin-bottom: 0;
+    }
+  }
+
+  .listings_list {
+    position: relative;
+    display: inline-block;
+    margin: 0vh 0vh 1vh 1vh;
+    width: 50vw;
+    height: 74vh;
+    right:0;
+    left:0;
+    overflow: auto;
+
+    .listing {
+      border: solid 1px;
+      text-align: center;
+      margin: 0 0 .5vh 0;
+      width: 47.5vw;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      .listingOverlay {
+        background-color: white;
+        opacity: .7;
+        text-shadow: 0 .1vh .1vh #9F9FED;
+        text-rendering: optimizeLegibility;
+      }
+
+        .listingListDetails {
+          margin-left: 4vh;
+          display: inline-block;
+          margin: 0;
+
+          h3 {
+            margin: 0;
+            margin-left: 4vh;
+          }
+
+          .listingDetails {
+            top: 0;
+            margin: 0 0 1vh 4vh;
+            display: inline-block;
+          }
+        }
+
+        .likeCompare {
+          .compare {
+           display: inline-block;
+            left: 0
+          }
+
+          .favorite {
+            display: inline-block;
+            margin-left: 10vw;
+          }
+        }
+
+    }
+  }
+}

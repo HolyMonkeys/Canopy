@@ -1,0 +1,43 @@
+.main-content {
+  position: relative;
+  min-height: 85vh;
+
+
+}
+#footer-container {
+  max-height: 10%;
+  bottom: 0px;
+  position: fixed;
+  background-color:white;
+  vertical-align: middle;
+  margin-bottom: 0px;
+  hr{
+    margin: 0px;  
+  }
+  .footer {
+    margin: 10px;
+    width: 100vw;
+
+    li {
+      font-family: 'Nova Mono', monospace;
+      list-style: none;
+      display: inline;
+      clear: both;
+      margin: 20% 20px 0 20px;
+    }
+    .logo {
+      font-size: 20px;
+      cursor: pointer;
+      }
+
+    a {
+      text-decoration: none;
+      &:hover {
+        color: #17A6B6;
+      }
+    }
+    .fa-github{
+      margin-right: 0.2em;
+    }
+  }
+}

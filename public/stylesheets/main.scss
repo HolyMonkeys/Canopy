@@ -1,0 +1,24 @@
+//main container that has all contents
+@import './main/main-container';
+
+//splash pages styles
+@import './main/splash';
+@import './main/top-cities';
+@import './main/splash_about';
+
+
+//page styles
+@import './main/listings-list';
+@import './main/listing-page';
+
+
+//nav bar component
+@import './main/nav';
+
+
+//image dropzone
+@import './main/image-dropzone';
+
+
+//signin page
+@import './main/signIn';

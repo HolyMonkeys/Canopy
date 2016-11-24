@@ -1,0 +1,32 @@
+.navBar-container{
+  position: relative;
+  .navbar-default{
+    margin-bottom: 0px;
+  }
+}
+
+.navBar{
+  width: 100%;
+  position: sticky;
+  font-family: 'Nova Mono', monospace;
+  .Canopy {
+    margin-left: 2vw;
+  }
+  
+  .links {
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+}
+
+
+.container {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  right: 0;
+}
+
+div.navbar.navbar-static-bottom{
+
+}

@@ -1,0 +1,23 @@
+.signIn {
+  border: solid 1px;
+  background-color: #EFEFEF;
+  width: 60vw;
+  height: 60vh;
+  margin: auto;
+  margin-top: 10vh;
+  text-align: center;
+  font-family: 'Libre Franklin';
+
+  .signInForm {
+    margin-top: 10%;
+
+    input {
+      width: 50%;
+      margin-top: 2%;
+      border-radius: 5px;
+    }
+  }
+
+
+
+}

@@ -1,0 +1,84 @@
+// for about us page
+.about-links {
+  font-size: 3em;
+  color: #000;
+  margin: 0 2px 0 2px;
+  &:hover{
+    color: #00003d;
+  }
+}
+//
+
+
+.main {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-image: url('http://s7d4.scene7.com/is/image/roomandboard/hutton_706468_16e_g?$str_g$&size=1520,960&scl=1');
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  h1 {
+    margin-top:20vh;
+    color: #2C365E;
+    font-size: 5vh;
+    font-weight: bold;
+    font-family: 'Proza Libre', sans-serif;
+    text-shadow: 0 .1vh .5vh white;
+  }
+  h2 {
+    color: #2C365E;
+    font-size: 4vh;
+    font-weight: bold;
+    font-family: 'Proza Libre', sans-serif;
+    text-shadow: 0 .1vh .5vh white;
+
+  }
+  form {
+    display: inline-block;
+    margin-bottom: 0;
+    #formControlsText {
+      text-align: center;
+      width: 55vw;
+      height: 7vh;
+      font-family: 'Libre Franklin', sans-serif;
+      font-size: 3vh;
+    }
+    Button {
+      display: inline-block;
+      height: 7vh;
+      background-color: #73628A;
+      font-family: 'Libre Franklin', sans-serif;
+      color: #FEF9FF;
+      font-size: 3vh;
+    }
+  }
+}
+
+
+.mainInfo {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: grey;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+.canopyTeam {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+
+}

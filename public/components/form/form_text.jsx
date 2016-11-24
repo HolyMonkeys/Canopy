@@ -8,6 +8,7 @@ const FormText = (props) => {
       <FormControl
         onChange={props.handleChange(props.type)}
         type={props.type}
+        value={props.value}
         placeholder={props.placeholder} />
     </FormGroup>
   );

@@ -81,16 +81,13 @@ class ApplyForm extends Component {
 
   handleChange(key) {
     return (e) => {
-      console.log(key, e.target.value);
       const state = {};
       state[key] = e.target.value;
       this.setState(state);
-      console.log(this.state);
     };
   }
 
   render() {
-
     const rentalHistoryForms = [];
     for (let i = 0; i < this.state.rentalHistories; i += 1) {
       rentalHistoryForms.push(
@@ -99,20 +96,26 @@ class ApplyForm extends Component {
     }
     return (
       <div className="listingForm">
+        <h1>Application to Rent </h1>
+        <h3>Individual application required for each adult occupant.</h3>
+
         <Form inline>
-          <FormText type="name" handleChange={this.handleChange} placeholder={this.state.name} /> 
-          D.O.B.
+          <FormText type="name" handleChange={this.handleChange} value={this.state.name} />
+          <strong>D.O.B.</strong>
           <FormDate label="dob" handleChange={this.handleChange} placeholder='mm/dd/yyy' />
           <br />
-            <FormNumber type="phone" handleChange={this.handleChange} placeholder={this.state.phone} />
-            <FormText type="state" handleChange={this.handleChange} placeholder={this.state.state} />
+           Home <FormNumber type="phone" handleChange={this.handleChange} value={this.state.phone} />
+            <FormText type="state" handleChange={this.handleChange} value={this.state.state} />
+          <br />
           <br />
           <div>
             <h4> Current Address </h4>
             <FormText type="street" handleChange={this.handleChange} placeholder="e.g. 1060 W. Addison" />
             <FormText type="zip" handleChange={this.handleChange} placeholder="e.g. 88888" />
-            <FormText type="city" handleChange={this.handleChange} placeholder={this.state.city} />
+            <FormText type="city" handleChange={this.handleChange} value={this.state.city} />
           </div>
+          <br />
+          <br />
           <div>
             <h4> Current Occupcation </h4>
             <FormText type="currentEmployer" handleChange={this.handleChange} placeholder=" eg.88888" />
@@ -133,20 +136,12 @@ class ApplyForm extends Component {
           <FormNumber type="numChildOccupants" handleChange={this.handleChange} placeholder="2100" />
           <FormText type="pets" handleChange={this.handleChange} placeholder=" eg.88888" />
           <br />
-          <FormText type="currentEmployer" handleChange={this.handleChange} placeholder=" eg.88888" />
-          <FormText type="position" handleChange={this.handleChange} placeholder=" eg.88888" />
-          <FormNumber type="duration" handleChange={this.handleChange} placeholder="12" />
-          <br />
-          <FormNumber type="annualIncome" handleChange={this.handleChange} placeholder=" eg.88888" />
-          <FormText type="supervisorName" handleChange={this.handleChange} placeholder=" eg.88888" />
-          <FormNumber type="supervisorPhone" handleChange={this.handleChange} placeholder="12" />
-          <br />
           <FormText type="eSign" handleChange={this.handleChange} placeholder=" eg.88888" />
           <br />
+          {rentalHistoryForms}
           <Button onClick={this.addRentalHistory} type="button">
             Add a rental history
           </Button>
-          {rentalHistoryForms}
           <Button onClick={this.onFormSubmit} type="submit">
             Submit application
           </Button>

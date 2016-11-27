@@ -46,7 +46,7 @@ class ListingsList extends Component {
       };
       return (
         <div className="listing" style={divStyle}>
-          <div className="listingOverlay">
+          <div className="listingItemContainer"> 
             <ListingsListItem
               key={listing.id}
               listing={listing}
@@ -63,6 +63,8 @@ class ListingsList extends Component {
               listingsCompared={this.props.listingsCompared}
             />
           </div>
+          <div className="listingOverlay" />
+          <div className="listingPlaceholder" />
         </div>
       );
     });

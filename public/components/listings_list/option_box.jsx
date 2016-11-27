@@ -1,5 +1,5 @@
 import React from 'react';
-import { Nav, Navbar, NavItem, MenuItem, NavDropdown, SplitButton, Button } from 'react-bootstrap';
+import { Nav, Navbar, NavItem, MenuItem, NavDropdown, SplitButton } from 'react-bootstrap';
 
 import CitySearch from '../../containers/city-search';
 

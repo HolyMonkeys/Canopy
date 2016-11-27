@@ -75,13 +75,30 @@
           }
           input{
             width: 150px;
-            display: inline-block;
             right: 15px;
+            display: inline-block;
           }
-          .citySelect {
-            background-color: #73628A;
-            border-color: #73628A;
-            height: 34px
+          
+          form {
+            display: inline-block;
+            margin-bottom: 0;
+            #formControlsText {
+              text-align: center;
+              font-family: 'Libre Franklin', sans-serif;
+              font-size: 3vh;
+              border-radius: 3px 0px 0px 3px;
+            }
+
+            Button {
+              height: 34px;
+              display: inline-block;
+              background-color: #73628A;
+              font-family: 'Libre Franklin', sans-serif;
+              color: white;
+              font-size: 3vh;
+              border: #73628A;
+              border-radius: 0% 5% 5% 0%;
+            }
           }
         }
       }
@@ -107,25 +124,36 @@
     overflow: auto;
 
     .listing {
+      position: relative;
       border: solid 1px;
       text-align: center;
       margin: 0px 0 .5vh 0;
       width: 100%;
       background-repeat: no-repeat;
       background-size: cover;
-
+      .listingPlaceholder {
+        height: 230px;
+        width:100%;
+      }
       .listingOverlay {
+        position: absolute;
+        width:100%;
+        height: 230px;
+        z-index:1;
+        top: 0px;
         background-color: white;
-        opacity: .7;
+        opacity: .5;
         text-shadow: 0 .1vh .1vh #9F9FED;
         text-rendering: optimizeLegibility;
       }
-
+      .listingItemContainer{
+        right: 10vw;
+        position: absolute;
+        z-index: 11;
         .listingListDetails {
           margin-left: 4vh;
           display: inline-block;
           margin: 0;
-
           h3 {
             margin: 0;
             margin-left: 4vh;
@@ -137,6 +165,11 @@
             display: inline-block;
           }
         }
+        .btn {
+          background-color: #73628A;
+          border: #73628A;
+        }
+      }
 
         .likeCompare {
           padding-bottom: 10px;
@@ -144,7 +177,6 @@
            display: inline-block;
             left: 0
           }
-
           .favorite {
             display: inline-block;
             margin-left: 10vw;

@@ -69,22 +69,22 @@ class ListingDesc extends Component {
             <h4>{this.props.activeListing.term} Mo. Lease</h4>
             <h4>{this.props.activeListing.sqFoot} sqft</h4>
             <h4>Available on {this.props.activeListing.availableDate.slice(0, 10)}</h4>
-          </div><hr />
-          <div className="listingScores">
-            <ListingScores activeListing={this.props.activeListing} />
-          </div>
-          <Button
-            className="favorite"
-            bsSize="small"
-            bsStyle="info"
-            onClick={() => { this.addToFavorites(this.props.activeListing.id); }}
-          >
-            <Glyphicon glyph={this.state.heart} />
-          </Button>
+            <div className="listingScores">
+              <ListingScores activeListing={this.props.activeListing} />
+            </div>
+            <Button
+              className="favorite"
+              bsSize="small"
+              bsStyle="info"
+              onClick={() => { this.addToFavorites(this.props.activeListing.id); }}
+            >
+              <Glyphicon glyph={this.state.heart} />
+            </Button>
 
-          {(this.props.activeUser && this.props.activeUser.userType !== 1) &&
-            <Button className="listing-page-apply-button" onClick={this.applyToListing}> Apply </Button>
-          }
+            {(this.props.activeUser && this.props.activeUser.userType !== 1) &&
+              <Button className="listing-page-apply-button" onClick={this.applyToListing}> Apply </Button>
+            }
+          </div>
         </div>
         <Modal show={this.state.applySuccess} onHide={this.closeModal}>
           <Modal.Header closeButton>

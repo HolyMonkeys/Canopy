@@ -12,11 +12,13 @@ class CompareListings extends Component {
   render() {
     return (
       <div>
-        <GoogleMaps
-          listings={this.props.compareListings}
-          focalLat={this.props.activeCity.lat}
-          focalLon={this.props.activeCity.lon}
-        />
+        <div className="compare-map">
+          <GoogleMaps
+            listings={this.props.compareListings}
+            focalLat={this.props.activeCity.lat}
+            focalLon={this.props.activeCity.lon}
+          />
+        </div>
         <div className='compareLeft'>
           <ListingDetail
             activeListing={this.props.compareListings[0]}

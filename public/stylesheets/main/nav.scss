@@ -1,0 +1,54 @@
+.navBar-container{
+  position: relative;
+  z-index: 999;
+  .navbar-default{
+    margin-bottom: 0px;
+    border: none;
+    background-color: white;
+    height: 7vh;
+    .navbar-nav {
+      li {
+        a {
+          color: #7B858E;
+          &:hover {
+            color: #262626
+          }
+          padding-bottom: 3px;
+        }
+      }
+    }
+  }
+}
+
+.navBar{
+  width: 100%;
+  position: sticky;
+
+  .links {
+    font-family: 'Muli', sans-serif;
+    font-size: 12px;
+    margin-left: 1%;
+    margin-right: 1%;
+    padding-top: 5px;
+    background-color: white;
+    .Canopy {
+      padding-top: -10px;
+      margin-top: -7px;
+      font-family: 'Poiret One', sans-serif;
+      font-size: 30px;
+      margin-left: 2vw;
+    }
+  }
+}
+
+
+.container {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  right: 0;
+}
+
+div.navbar.navbar-static-bottom{
+
+}

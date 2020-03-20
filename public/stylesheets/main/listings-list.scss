@@ -1,0 +1,194 @@
+.modal-container {
+   position: relative;
+   width: 50vw;
+   display: inline-block;
+  }
+
+.modal-container .modal, .modal-container .modal-backdrop {
+  position: absolute;
+}
+
+.modal-body {
+  width:50vw;
+  text-align: center;
+  .listingDetails {
+    display: inline-block;
+  }
+}
+
+.modal-content .modal-footer {
+  width:50vw;
+}
+
+.listingsPage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-family: 'Work Sans', sans-serif;
+  .container{
+    width: 100%
+  }
+
+  #listingsList-container{
+    position: relative;
+    display:inline-block;
+    width:100%;
+    max-height: 50vh;
+    .listings_map {
+      position: absolute;
+      display: inline-block;
+      width: 53vw;
+      height: 83vh;
+      right: 1vw;
+      top: 0px;
+    }
+  }
+
+
+
+  .listingOptions {
+    margin-bottom: 0;
+    width: 100%;
+    .container {
+      height: 100%;
+      position: relative;
+    }
+    #listings-filter{
+      margin: 0;
+      padding: 0;
+      top:0px;
+      display: inline-block;
+      z-index:99;
+      .nav{
+        width:100vw;
+        .city-search-listings{
+          margin-top: 7px;
+          margin-right: 7px;
+          float: right;
+          text-align: center;
+          display: inline-block;
+          *{
+            display: inline-block;
+          }
+          .form-inline {
+            margin-right: 25px;
+          }
+          input{
+            width: 150px;
+            right: 15px;
+            display: inline-block;
+          }
+          
+          form {
+            display: inline-block;
+            margin-bottom: 0;
+            #formControlsText {
+              text-align: center;
+              font-family: 'Libre Franklin', sans-serif;
+              font-size: 3vh;
+              border-radius: 3px 0px 0px 3px;
+            }
+
+            Button {
+              height: 34px;
+              display: inline-block;
+              background-color: #73628A;
+              font-family: 'Libre Franklin', sans-serif;
+              color: white;
+              font-size: 3vh;
+              border: #73628A;
+              border-radius: 0% 5% 5% 0%;
+            }
+          }
+        }
+      }
+    }
+    .navbar{
+      margin-bottom: 0;
+      height: 55px;
+      width: 100%;
+      border-radius: 0px;
+    }
+    .compareBtn{
+      display: inline-block;
+    }
+  }
+
+  .listings_list {
+    position: relative;
+    display: inline-block;
+    width: 45vw;
+    height: 83vh;
+    right:0;
+    left: 0;
+    overflow: auto;
+
+    .listing {
+      position: relative;
+      border: solid 1px;
+      text-align: center;
+      margin: 0px 0 .5vh 0;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      .listingPlaceholder {
+        height: 230px;
+        width:100%;
+      }
+      .listingOverlay {
+        position: absolute;
+        width:100%;
+        height: 230px;
+        z-index:1;
+        top: 0px;
+        background-color: white;
+        opacity: .5;
+        text-shadow: 0 .1vh .1vh #9F9FED;
+        text-rendering: optimizeLegibility;
+      }
+      .listingItemContainer{
+        right: 10vw;
+        position: absolute;
+        z-index: 11;
+        .listingListDetails {
+          margin-left: 4vh;
+          display: inline-block;
+          margin: 0;
+          h2 {
+            font-size: 3vh;
+          }
+          h3 {
+            margin: 0;
+            margin-left: 4vh;
+            font-size: 3vh
+          }
+          h4 {
+            font-size: 2vh;
+          }
+        }
+        .btn {
+          background-color: #73628A;
+          border: #73628A;
+        }
+      }
+
+      .listingDetails {
+        top: 0;
+        margin: 0 0 0vh 4vh;
+        display: inline-block;
+      }
+        .likeCompare {
+          padding-bottom: 10px;
+          .compare {
+           display: inline-block;
+            left: 0
+          }
+          .favorite {
+            display: inline-block;
+            margin-left: 10vw;
+          }
+        }
+
+    }
+  }
+}

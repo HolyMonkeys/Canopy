@@ -1,0 +1,82 @@
+.listing-page {
+  width: 98vw;
+  height: 100vh;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  position: relative;
+  font-family: 'Libre Franklin', sans-serif;
+  background-color: #7B858E;
+
+  .listing-map {
+    padding-left: 1vw;
+    padding-top: 2vh;
+    width: 97vw;
+    height: 20vh;
+  }
+
+  .listing-container{
+    width: 98vw;
+
+    .listing-detail{
+      display: inline-block;
+
+      .listingInfo {
+        width: 30vw;
+        font-family: 'Muli', sans-serif;
+        color: white;
+        display: inline-block;
+        margin-left: 5vw;
+
+        .walkScore div {
+          display: inline-block;
+
+          a {
+            color: white;
+            &:hover {
+              color: #39499e;
+            }
+          }
+        }
+
+        .details {
+          margin: 0;
+          display: inline-block;
+        }
+
+        .favorite {
+          background-color: #73628A;
+          border: none;
+          border-right: solid white 0.5px;
+          border-radius: 5% 0 0 5%;
+          height: 6vh;
+          &:hover {
+            background-color: #39499e;
+          }
+        }
+
+        .listing-page-apply-button {
+          background-color: #73628A;
+          border-radius: 0 5% 5% 0;
+          border: none;
+          color: white;
+          height: 6vh;
+          &:hover {
+            background-color: #39499e;
+          }
+        }
+      }
+    }
+
+    .listing-pics {
+      display: inline-block;
+      padding-left: 5vw;
+
+      .listing-carousel {
+
+        img{
+          max-height: 60vh;
+        }
+      }
+    }
+  }
+}

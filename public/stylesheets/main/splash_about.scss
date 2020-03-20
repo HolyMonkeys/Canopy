@@ -1,0 +1,49 @@
+.splash-about {
+  margin-left: 1vw;
+  margin-right: 1vw;
+  margin-bottom: 1vh;
+  width: 98vw;
+  background-color: #7B858E;
+  color: white;
+  padding-top: 4vh;
+  padding-bottom: 5vh;
+
+  .splash-about-header {
+    font-family: 'Muli', sans-serif;
+    text-align: center;
+    font-size: 4vh;
+    margin-bottom: 5vh;
+  }
+
+  .splash-about-desc-top {
+    font-family: 'Quicksand', sans-serif;
+    padding: 3vh 3vw 3vh 15vw;
+    font-size: 20px;
+
+    h3 {
+      font-size: 26px;
+    }
+  }
+
+  .splash-about-img-top {
+    padding: 0vh 7vw 0vh 0vw;
+  }
+
+  .splash-about-desc-middle {
+    font-family: 'Quicksand', sans-serif;
+    padding: 3vh 14vw 3vh 3vw;
+    font-size: 20px;
+
+    h3 {
+      font-size: 26px;
+    }
+  }
+
+  .splash-about-img-middle {
+    padding: 0vh 0vw 0vh 7vw;
+  }
+
+  .splash-about-img-bottom {
+    padding: 0vh 7vw 0vh 0vw;
+  }
+}

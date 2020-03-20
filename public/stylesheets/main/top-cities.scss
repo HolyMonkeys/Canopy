@@ -1,0 +1,89 @@
+.splash-cities {
+  margin-left: 1vw;
+  margin-right: 1vw;
+  margin-bottom: 10px;
+  padding-left: 7vw;
+  padding-right: 7vw;
+  padding-bottom: 5vh;
+  width: 98vw;
+  text-align: center;
+
+  h3 {
+    font-family: 'Muli', sans-serif;
+    font-size: 4vh;
+    padding-top: 2vw;
+    color: #7B858E;
+  }
+
+  .splash-city-top {
+    cursor: pointer;
+    margin: 5vh 1.5vw 2.5vh 1.5vw;
+    width: 39vw;
+    height: 35vh;
+    -moz-transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    &:hover {
+      -moz-transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+
+    p {
+      margin-top: 15vh;
+      color: white;
+      font-family: 'Muli', sans-serif;
+      font-size: 5vh;
+    }
+  }
+
+  .splash-city-bottom {
+    cursor: pointer;
+    margin: 2.5vh 1.5vw 5vh 1.5vw;
+    width: 39vw;
+    height: 35vh;
+    -moz-transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    &:hover  {
+      -moz-transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+
+    p {
+      margin-top: 15vh;
+      color: white;
+      font-family: 'Muli', sans-serif;
+      font-size: 5vh;
+    }
+  }
+
+  .chicago {
+    background-image: url('https://1366x768wallpaper.com/no-watermarks/originals/2015/10/01/chicago-night-city.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+  }
+
+  .san-francisco {
+    background-image: url('https://stacyfischer.files.wordpress.com/2014/11/painted-ladies1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+  }
+
+  .new-york {
+    background-image: url('http://www.nationalgeographic.com/new-york-city-skyline-tallest-midtown-manhattan/assets/img/articleImg/01nyskyline1536.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+  }
+
+  .los-angeles {
+    background-image: url('https://static1.squarespace.com/static/51c34053e4b07376a4a23cbf/53d69db0e4b0046e8e324d99/53eea6cce4b06ae6d5af1526/1460067410740/los-angeles-at-night-palm-trees.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+  }
+}

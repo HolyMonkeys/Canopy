@@ -1,0 +1,61 @@
+// for about us page
+.about-links {
+  font-size: 3em;
+  color: #73628A;
+  margin: 0 2px 0 2px;
+  &:hover{
+    color: #39499e;
+  }
+}
+//
+
+.splash-main {
+  position: relative;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  margin-bottom: 10px;
+  width: 98vw;
+  height: 95vh;
+  left: 0;
+  top: 0;
+  background-image: url('http://manual17.biz/wp-content/uploads/2016/04/34-amazing-modern-master-bedroom-designs-for-your-home-inside-amazing-master-bedroom-for-cozy.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+
+  h1 {
+    margin-top: 0;
+    padding-top: 25vh;
+    color: white;
+    font-size: 5vh;
+    font-family: 'Quicksand', sans-serif;
+  }
+
+  form {
+    display: inline-block;
+    margin-bottom: 0;
+    #formControlsText {
+      text-align: center;
+      width: 55vw;
+      height: 7vh;
+      font-family: 'Muli', sans-serif;
+      font-size: 3vh;
+      border-radius: 3px 0px 0px 3px;
+    }
+
+    Button {
+      display: inline-block;
+      height: 7vh;
+      width: 5vw;
+      background-color: #73628A;
+      color: white;
+      font-size: 3vh;
+      border: #73628A;
+      border-radius: 0% 5% 5% 0%;
+      &:hover {
+        background-color: #39499e;
+        border: #39499e;
+      }
+    }
+  }
+}

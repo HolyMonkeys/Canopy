@@ -1,0 +1,97 @@
+.form-page {
+  background-color: white;
+  background-image: url('http://manual17.biz/wp-content/uploads/2016/04/34-amazing-modern-master-bedroom-designs-for-your-home-inside-amazing-master-bedroom-for-cozy.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  position: relative;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  margin-bottom: 10px;
+  width: 98vw;
+  height: 95vh;
+  left: 0;
+  top: 0;
+
+  .form-container {
+    position: relative;
+    border-radius: 3px;
+    height: 70vh;
+    width: 80vw;
+    margin-left: 9vw;
+    text-align: center;
+    .form-box-container {
+      position: absolute;
+      z-index: 10;
+      height: 70vh;
+      width: 80vw;
+      top: 50px;
+
+      h1 {
+        position: relative;
+        color: white;
+        font-size: 40px;
+        font-family: 'Quicksand', sans-serif;
+        margin-bottom: 3vh;
+      }
+
+      .form-box {
+        font-family: 'Muli', sans-serif;
+        padding-bottom: 10vh;
+        position: relative;
+        text-align: center;
+        color: white;
+        .form-group, .input-group-btn {
+          text-align: center;
+          label, input{
+            display: block;
+          }
+          input, select, button {
+            width: 20vw;
+            border: none;
+            border-radius: 3px;
+            margin-left: 1vw;
+            margin-right: 1vw;
+            font-family: 'Muli', sans-serif;
+          }
+        }
+    }
+      .dropdown-form {
+        display: inline-block;
+        margin-top: 11px;
+      }
+      .input-group-btn {
+        width: 20vw;
+      }
+      ul {
+        width: 20vw;
+        margin: 0 1vw 0 1vw;
+        font-family: 'Muli', sans-serif;
+      }
+
+      .submit-botton {
+        color: white;
+        background-color: #73628A;
+        width: 15vw;
+        border: none;
+        border-radius: 3px;
+        font-family: 'Muli', sans-serif;
+        &:hover {
+          background-color: #39499e;
+        }
+      }
+    }
+
+    .opacBG {
+      position: absolute;
+      z-index: 1;
+      background-color: black;
+      opacity: 0.6;
+      height: 70vh;
+      width: 80vw;
+      top: 50px;
+    }
+  }
+  /* Unique to sign-up, should modularize it later*/
+ 
+}

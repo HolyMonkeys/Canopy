@@ -3,8 +3,13 @@
 
 ## NPM and BOWER ##
 node_modules/
-bower_components/
+public/components/bower_components/
 
 ## config files ##
 config.js
 .env
+
+## webpack bundle ##
+publicServed/bundle.js
+
+

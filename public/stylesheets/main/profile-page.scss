@@ -1,0 +1,84 @@
+.user-profile {
+  width: 98vw;
+  height: 100vh;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  position: relative;
+  font-family: 'Libre Franklin', sans-serif;
+  background-color: #7B858E;
+
+  .user-profile-header {
+
+    .user-info, .user-info-edit {
+      color: #3D3D3D;
+      font-family: 'Muli', sans-serif;
+      border-radius: 3px;
+      margin: 3vh 0 2vh 4vw;
+      background-color: white;
+      
+      table {
+        td {
+          padding-left: 15px;
+        }
+      }
+
+      div {
+        display: inline-block;
+      }
+
+      .btn-group-vertical {
+        position: absolute;
+        margin-top: 2vh;
+
+        button {
+          border: solid .5px white;
+          background-color: #73628A;
+          &:hover {
+            background-color: #39499e;
+          }
+        }
+      }
+    }
+  }
+
+  .profile_listings {
+    font-family: 'Muli', sans-serif;
+
+    .btn {
+      border: solid .5px white;
+      background-color: #73628A;
+      &:hover {
+        background-color: #39499e;
+      }
+    }
+
+    .usersthings {
+      margin-left: 4vw;
+    }
+
+    .listingsPage {
+
+      .listings_list {
+        height: 60vh;
+        overflow: auto;
+        border-radius: 3px;
+
+        div {
+          border-radius: 3px;
+          color: #3D3D3D;
+          border: none;
+        }
+      }
+    }
+
+    .emailBox {
+      z-index: 999;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      float: right;
+      background-color: white;
+      min-height: 22vh;
+    }
+  }
+}

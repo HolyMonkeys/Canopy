@@ -70,7 +70,7 @@
     "redux-promise": "^0.5.3",
     "sequelize": "^3.24.8",
     "sinon": "^1.17.6",
-    "superagent": "^2.3.0",
+    "superagent": "^5.2.2",
     "webpack": "^1.13.3",
     "webpack-dev-middleware": "^1.8.4",
     "webpack-dev-server": "^1.16.2",
